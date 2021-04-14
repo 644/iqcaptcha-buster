@@ -1,3 +1,9 @@
+<h1 align="center">
+  <a href="https://www.reddit.com/r/iamverysmart/">
+    <img src="LOL.png" alt="ZeroIQcaptcha">
+  </a>
+</h1>
+
 # IQ Captcha Buster
 A userscript that automatically solves IQ captchas for https://iqcaptcha.us.to
 
