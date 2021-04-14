@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+declare -A solutions=(['raven0']='5' ['raven1']='3' ['raven2']='4' ['raven3']='1' ['raven4']='6' ['raven5']='5' ['raven6']='5' ['raven7']='4' ['raven8']='8' ['raven9']='5' ['raven10']='1' ['raven11']='3' ['raven12']='2' ['raven13']='1' ['raven14']='7' ['raven15']='2' ['raven16']='7' ['raven17']='4' ['raven18']='3' ['raven19']='1' ['raven20']='8' ['raven21']='7' ['raven22']='5' ['raven23']='1' ['raven24']='5')
+
+s=0
+convert tmp.jpg -resize 400x400\! -noise 3 -flatten -grayscale Rec709Luminance -fuzz 50% +opaque "#000000" tmp.png &>/dev/null
+for f in gray-raven*; do
+	k=$(convert "${f}" tmp.png \( -clone 0-1 -compose darken -composite \) -channel RGB -compare -format "%[distortion]" info:)
+	(($(bc <<< "${k} > ${s%:*}") == 1)) && s="${k}:${f}"
+done
+
+s=${s#*:}
+s=${s/gray-/}
+x=${solutions[${s%.*}]}
+
+eq=$(<formula.txt)
+eq_r='f\(x\) = (.+)<br>'
+dr_r="f('{1,})\(x\)"
+[[ ${eq} =~ ${eq_r} ]] && formula=${BASH_REMATCH[1]}
+[[ ${eq} =~ ${dr_r} ]] && diffc=${#BASH_REMATCH[1]}
+
+for((i=0; i<diffc; i++)); do diffv="diff(${diffv}"; done
+diffv+="${formula}"
+for((i=0; i<diffc; i++)); do diffv+=")"; done
+
+val=$(qalc -t "${diffv}")
+val=$(qalc -t "${val} + x where x=${x}")
+case ${val} in
+	(*[!0-9]*|"") echo 'Unable to solve' ;;
+	*) echo "${val}" ;;
+esac
