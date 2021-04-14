@@ -27,6 +27,11 @@ Then [click here to install the userscript](https://raw.githubusercontent.com/64
 
 And finally in the tampermonkey dashboard, modify the url to the iq-solve.php location in the IQCaptchaBuster userscript.
 
+You may also need to create empty tmp.jpg and formula.txt files.
+```bash
+touch tmp.jpg formula.txt
+```
+
 Next time you encounter an IQ captcha, it should automatically enter the solution when you click the checkbox. You can test it's working by trying the one on https://iqcaptcha.us.to
 
 # Example
