@@ -21,5 +21,8 @@ Then [click here to install the userscript](https://raw.githubusercontent.com/64
 
 Next time you encounter an IQ captcha, it should automatically enter the solution when you click the checkbox. You can test it's working by trying the one on https://iqcaptcha.us.to
 
+# Example
+![Example](https://raw.githubusercontent.com/644/iqcaptcha-buster/main/example.gif)
+
 # License
 MIT
