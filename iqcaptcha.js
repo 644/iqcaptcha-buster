@@ -1,12 +1,18 @@
 // ==UserScript==
 // @name        IQCaptchaBuster
+// @author      644
+// @license     MIT
 // @description Automatically solves IQ captchas
 // @include     https://*
 // @include     http://*
 // @require     https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js
 // @grant       GM_xmlhttpRequest
 // @grant       GM_notification
-// @version     0.1
+// @namespace   https://github.com/644
+// @updateURL   https://raw.githubusercontent.com/644/iqcaptcha-buster/main/iqcaptcha.js
+// @downloadURL https://raw.githubusercontent.com/644/iqcaptcha-buster/main/iqcaptcha.js
+// @supportURL  https://github.com/644/iqcaptcha-buster/issues
+// @version     1.0
 // ==/UserScript==
 
 (function(){
