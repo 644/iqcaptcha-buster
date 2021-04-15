@@ -40,7 +40,7 @@
 		var capdata = document.getElementsByClassName('iq-captcha-img');
 		if(capdata[0]){
             var frm = prompt("Enter 'equation:apostrophe count'");
-            solveCaptcha(capdata[0], 1);
+            solveCaptcha(capdata[0], frm, 1);
             for(var num=2; num < 5; num++){
                 if (confirm('Try again?')) {
                     solveCaptcha(capdata[0], frm, num);
