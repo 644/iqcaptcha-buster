@@ -11,7 +11,7 @@ A userscript that automatically solves IQ captchas for https://iqcaptcha.us.to
 
 # Requirements
 - Bash >4.0+
-- Imagemagick
+- Imagemagick >7.0+
 - Qalculate
 - A server with PHP
 - Tampermonkey
@@ -32,7 +32,11 @@ You may also need to create empty tmp.jpg and formula.txt files.
 touch tmp.jpg formula.txt
 ```
 
-Next time you encounter an IQ captcha, it should automatically enter the solution when you click the checkbox. You can test it's working by trying the one on https://iqcaptcha.us.to
+Next time you encounter an IQ captcha, it will prompt you for the equation and apostrophe count. Just enter, for example
+```
+4x^2+5x+8:3
+```
+Then it will attempt to solve and prompt you to retry. Just click cancel if it solved successfully. Later versions may use tesseract to extract the equation from the IQ Captcha, so no human input is necessary. You can test it's working by trying the one on https://iqcaptcha.us.to
 
 # Example
 ![Example](https://raw.githubusercontent.com/644/iqcaptcha-buster/main/example.gif)
