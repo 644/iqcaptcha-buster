@@ -32,9 +32,10 @@ You may also need to create empty tmp.jpg, ans.txt and formula.txt files.
 touch tmp.jpg ans.txt formula.txt
 ```
 
-Next time you encounter an IQ captcha, it will prompt you for the equation and apostrophe count. Just enter, for example
+Next time you encounter an IQ captcha, it will prompt you for the equation and apostrophe count, along with the answer numbers. Just enter, for example
 ```
-4x^2+5x+8:3
+4x^2+5x+8:3 # first prompt
+11:22:33:44:55:66:77:88 # second prompt
 ```
 Then it will attempt to solve and prompt you to retry. Just click cancel if it solved successfully. Later versions may use tesseract to extract the equation from the IQ Captcha, so no human input is necessary. You can test it's working by trying the one on https://iqcaptcha.us.to
 
