@@ -17,7 +17,7 @@
 
 (function(){
 	'use strict';
-	function solveCaptcha(capdata, frm, num){
+	function solveCaptcha(capdata, frm, num, ans){
         var notificationDetails = {
             text: 'Solving captcha',
             title: 'IQ Captcha Buster',
@@ -28,7 +28,7 @@
             type: 'POST',
             async: false,
             url: 'http://yourdomain.com/iq-solve.php',
-            data: {"captchadata": capdata.src, "formula": frm, "num": num},
+            data: {"captchadata": capdata.src, "formula": frm, "num": num, "ans": ans},
             success: function(data){
                 document.getElementById('iq-captcha-answer').value = data.solution;
                 document.getElementById('iq-captcha-verify-button').click();
@@ -40,10 +40,11 @@
 		var capdata = document.getElementsByClassName('iq-captcha-img');
 		if(capdata[0]){
             var frm = prompt("Enter 'equation:apostrophe count'");
-            solveCaptcha(capdata[0], frm, 1);
+            var ans = prompt("Enter the answer numbers separated with :");
+            solveCaptcha(capdata[0], frm, 1, ans);
             for(var num=2; num < 5; num++){
                 if (confirm('Try again?')) {
-                    solveCaptcha(capdata[0], frm, num);
+                    solveCaptcha(capdata[0], frm, num, ans);
                 } else {
                     break;
                 }
