@@ -11,6 +11,8 @@ done | awk -F: -vB="${bc}" '{print abs($1-B)":"$2} function abs(x) { return x < 
 
 x=${solutions[${s%.*}]}
 eq=$(<formula.txt)
+ans=$(<ans.txt)
+x=$(echo "${ans}" | cut -d: -f"${x}")
 formula=${eq%:*}
 diffc=${eq#*:}
 
