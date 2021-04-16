@@ -27,9 +27,9 @@ Then [click here to install the userscript](https://raw.githubusercontent.com/64
 
 And finally in the tampermonkey dashboard, modify the url to the iq-solve.php location in the IQCaptchaBuster userscript.
 
-You may also need to create empty tmp.jpg and formula.txt files.
+You may also need to create empty tmp.jpg, ans.txt and formula.txt files.
 ```bash
-touch tmp.jpg formula.txt
+touch tmp.jpg ans.txt formula.txt
 ```
 
 Next time you encounter an IQ captcha, it will prompt you for the equation and apostrophe count. Just enter, for example
